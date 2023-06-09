@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './ExpenseForm.css';
+import styles from './ExpenseForm.module.css';
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
@@ -62,8 +62,10 @@ const ExpenseForm = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
+      <div
+        className={`${styles['new-expense__control']} ${styles['new-expense__controls']}`}
+      >
+        <div>
           <label>Title</label>
           <input
             type="text"
@@ -71,7 +73,7 @@ const ExpenseForm = (props) => {
             onChange={titleChangeHandler}
           />
         </div>
-        <div className="new-expense__control">
+        <div>
           <label>Title</label>
           <input
             type="number"
@@ -81,7 +83,7 @@ const ExpenseForm = (props) => {
             onChange={amountChangeHandler}
           />
         </div>
-        <div className="new-expense__control">
+        <div>
           <label>Title</label>
           <input
             type="date"
@@ -92,7 +94,7 @@ const ExpenseForm = (props) => {
           />
         </div>
       </div>
-      <div className="new-expense__actions">
+      <div>
         <button type="submit">Add Expense</button>
       </div>
     </form>
