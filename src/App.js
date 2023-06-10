@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Wrapper from './Wrapper';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
@@ -44,10 +45,10 @@ const App = () => {
   // );
 
   return (
-    <div>
+    <Wrapper>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
-    </div>
+    </Wrapper>
   );
 };
 
