@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import styles from './ExpenseForm.module.css';
 
 const ExpenseForm = (props) => {
+  const titleInputRef = useRef();
+  const amountInputRef = useRef();
+
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
@@ -14,6 +17,7 @@ const ExpenseForm = (props) => {
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
+    console.log(titleInputRef.current.value);
     // setUserInput({
     //   ...userInput,
     //   enteredTitle: event.target.value,
@@ -25,6 +29,7 @@ const ExpenseForm = (props) => {
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
+    console.log(amountInputRef);
     // setUserInput({
     //   ...userInput,
     //   enteredAmount: event.target.value,
@@ -71,6 +76,7 @@ const ExpenseForm = (props) => {
             type="text"
             value={enteredTitle}
             onChange={titleChangeHandler}
+            ref={titleInputRef}
           />
         </div>
         <div>
@@ -81,6 +87,7 @@ const ExpenseForm = (props) => {
             step="0.01"
             value={enteredAmount}
             onChange={amountChangeHandler}
+            ref={amountInputRef}
           />
         </div>
         <div>
