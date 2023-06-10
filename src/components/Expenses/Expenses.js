@@ -3,8 +3,8 @@ import Card from '../UI/Card';
 import './Expenses.css';
 
 const Expenses = (props) => {
-  return (
-    <Card className="expenses">
+  return [
+    <Card key="car-item-key" className="expenses">
       {props.items.map((expense) => (
         <ExpenseItem
           key={expense.id}
@@ -33,8 +33,8 @@ const Expenses = (props) => {
         amount={props.items[3].amount}
         date={props.items[3].date}
       /> */}
-    </Card>
-  );
+    </Card>,
+  ];
 };
 
 export default Expenses;
