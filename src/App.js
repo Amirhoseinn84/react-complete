@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
-import Wrapper from './Wrapper';
+// import Wrapper from './Wrapper';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
@@ -45,10 +45,10 @@ const App = () => {
   // );
 
   return (
-    <Wrapper>
+    <Fragment>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
-    </Wrapper>
+    </Fragment>
   );
 };
 
