@@ -1,10 +1,13 @@
-import ExpenseItem from './ExpenseItem';
-import Card from '../UI/Card';
-import './Expenses.css';
+import ExpenseItem from "./ExpenseItem";
+import Card from "../UI/Card";
+import "./Expenses.css";
 
 const Expenses = (props) => {
   return [
-    <Card key="car-item-key" className="expenses text-xl font-bold underline">
+    <Card
+      key="car-item-key"
+      className="expenses text-xl font-bold text-green-400 underline"
+    >
       {props.items.map((expense) => (
         <ExpenseItem
           key={expense.id}
