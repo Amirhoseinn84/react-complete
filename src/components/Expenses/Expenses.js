@@ -4,7 +4,7 @@ import './Expenses.css';
 
 const Expenses = (props) => {
   return [
-    <Card key="car-item-key" className="expenses">
+    <Card key="car-item-key" className="expenses text-xl font-bold underline">
       {props.items.map((expense) => (
         <ExpenseItem
           key={expense.id}
